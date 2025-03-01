@@ -26,7 +26,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             position: relative;
             z-index: 100;
-            border-radius: 30px;
+            border-radius: 15px; /* Less round */
             margin: 10px;
         }
 
@@ -41,7 +41,7 @@
             position: relative;
             z-index: 200;
             background-color: #243855;
-            border-radius: 10px;
+            border-radius: 5px; /* Less round */
         }
 
         .hamburger span {
@@ -50,6 +50,20 @@
             width: 24px;
             background-color: #fff;
             margin: 3px 0;
+            transition: all 0.3s ease; /* Add transition for smooth animation */
+        }
+
+        /* X animation styles */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
         }
 
         .name {
@@ -95,7 +109,7 @@
             transition: background-color 0.3s ease;
             background-color: #243855;
             margin: 10px;
-            border-radius: 30px;
+            border-radius: 10px; /* Less round */
             text-align: center;
         }
 
@@ -113,7 +127,7 @@
             flex-grow: 1;
             margin: 0 10px 10px 10px;
             background-color: #243855;
-            border-radius: 30px;
+            border-radius: 15px; /* Less round */
             padding: 30px;
             color: #fff;
         }
@@ -128,43 +142,15 @@
         .timeline-container {
             background-color: #2c4166;
             padding: 20px;
-            border-radius: 20px;
+            border-radius: 10px; /* Less round */
             margin-bottom: 30px;
             position: relative;
         }
 
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
         .timeline-title {
             font-size: 24px;
+            margin-bottom: 40px;
             text-align: center;
-            flex-grow: 1;
-        }
-
-        .toggle-pin-btn {
-            background-color: #243855;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 15px;
-            cursor: pointer;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .toggle-pin-btn:hover {
-            background-color: #1c2d45;
-        }
-
-        .pin-icon {
-            margin-right: 5px;
         }
 
         .timeline-wrapper {
@@ -233,16 +219,15 @@
             transform: translateX(-50%);
             color: #fff;
             font-size: 24px;
-            pointer-events: none;
+            pointer-events: none; /* Important: This prevents the pin from interfering with clicks */
             z-index: 10;
-            transition: opacity 0.3s ease;
         }
 
         .timeline-content {
-            margin-top: 60px;
+            margin-top: 60px; /* Increased to accommodate year labels */
             background-color: #2c4166;
             padding: 20px;
-            border-radius: 20px;
+            border-radius: 10px; /* Less round */
             line-height: 1.6;
             transition: opacity 0.3s ease;
         }
@@ -273,7 +258,7 @@
             
             .horizontal-timeline {
                 overflow-x: auto;
-                padding-bottom: 30px;
+                padding-bottom: 30px; /* Space for year labels */
             }
             
             .timeline-point {
@@ -319,12 +304,7 @@
                 <h2 class="section-title">Perfil pessoal</h2>
                 
                 <div class="timeline-container">
-                    <div class="timeline-header">
-                        <h3 class="timeline-title">Timelapse</h3>
-                        <button class="toggle-pin-btn" id="togglePinBtn">
-                            <span class="pin-icon">📍</span> Mostrar Pin
-                        </button>
-                    </div>
+                    <h3 class="timeline-title">Timelapse</h3>
                     
                     <div class="timeline-wrapper">
                         <div class="horizontal-timeline">
@@ -347,7 +327,7 @@
             </section>
 
             <section id="skills" class="section">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title">Habilidades</h2>
                 <p>Conteúdo sobre habilidades será adicionado aqui.</p>
             </section>
 
@@ -399,10 +379,6 @@
         // Dynamically create timeline points
         const timelinePoints = document.getElementById('timelinePoints');
         const timelineContent = document.getElementById('timelineContent');
-        const togglePinBtn = document.getElementById('togglePinBtn');
-        
-        // Pin visibility state
-        let isPinVisible = true;
         
         // Initialize with the first content item
         timelineContent.textContent = timelineData[0].content;
@@ -431,38 +407,24 @@
             timelinePoints.appendChild(pointDiv);
         });
         
-        // Handle toggle pin button
-        togglePinBtn.addEventListener('click', () => {
-            isPinVisible = !isPinVisible;
-            
-            // Update all markers
-            const markers = document.querySelectorAll('.location-marker');
-            markers.forEach(marker => {
-                marker.style.opacity = isPinVisible ? '1' : '0';
-            });
-            
-            // Update button text
-            togglePinBtn.innerHTML = isPinVisible ? 
-                '<span class="pin-icon">📍</span> Esconder Pin' : 
-                '<span class="pin-icon" style="opacity: 0.5;">📍</span> Mostrar Pin';
-        });
-        
-        // Handle hamburger menu
+        // Handle hamburger menu - Updated with toggle for X animation
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
         
         hamburger.addEventListener('click', () => {
             menu.classList.toggle('active');
+            hamburger.classList.toggle('active'); // Toggle active class for hamburger to X animation
         });
         
-        // Close menu when clicking outside
+        // Close menu when clicking outside - Updated to also reset hamburger icon
         document.addEventListener('click', (e) => {
             if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
                 menu.classList.remove('active');
+                hamburger.classList.remove('active'); // Reset hamburger icon
             }
         });
         
-        // Handle menu navigation
+        // Handle menu navigation - Updated to also reset hamburger icon
         const menuItems = document.querySelectorAll('.menu-item');
         const sections = document.querySelectorAll('.section');
         
@@ -482,11 +444,13 @@
                 
                 document.getElementById(sectionId).classList.add('active');
                 menu.classList.remove('active');
+                hamburger.classList.remove('active'); // Reset hamburger icon
             });
         });
         
         // Handle timeline navigation - improved version
         const allTimelinePoints = document.querySelectorAll('.timeline-point');
+        const locationMarker = document.getElementById('locationMarker');
         
         allTimelinePoints.forEach(point => {
             point.addEventListener('click', () => {
@@ -510,8 +474,6 @@
                 const markerDiv = document.createElement('div');
                 markerDiv.className = 'location-marker';
                 markerDiv.textContent = '📍';
-                // Apply current visibility
-                markerDiv.style.opacity = isPinVisible ? '1' : '0';
                 point.appendChild(markerDiv);
                 
                 // Update content with fade effect
