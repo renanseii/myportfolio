@@ -133,10 +133,38 @@
             position: relative;
         }
 
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
         .timeline-title {
             font-size: 24px;
-            margin-bottom: 40px;
             text-align: center;
+            flex-grow: 1;
+        }
+
+        .toggle-pin-btn {
+            background-color: #243855;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-pin-btn:hover {
+            background-color: #1c2d45;
+        }
+
+        .pin-icon {
+            margin-right: 5px;
         }
 
         .timeline-wrapper {
@@ -205,12 +233,13 @@
             transform: translateX(-50%);
             color: #fff;
             font-size: 24px;
-            pointer-events: none; /* Important: This prevents the pin from interfering with clicks */
+            pointer-events: none;
             z-index: 10;
+            transition: opacity 0.3s ease;
         }
 
         .timeline-content {
-            margin-top: 60px; /* Increased to accommodate year labels */
+            margin-top: 60px;
             background-color: #2c4166;
             padding: 20px;
             border-radius: 20px;
@@ -244,7 +273,7 @@
             
             .horizontal-timeline {
                 overflow-x: auto;
-                padding-bottom: 30px; /* Space for year labels */
+                padding-bottom: 30px;
             }
             
             .timeline-point {
@@ -290,7 +319,12 @@
                 <h2 class="section-title">Perfil pessoal</h2>
                 
                 <div class="timeline-container">
-                    <h3 class="timeline-title">Timelapse</h3>
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Timelapse</h3>
+                        <button class="toggle-pin-btn" id="togglePinBtn">
+                            <span class="pin-icon">📍</span> Mostrar Pin
+                        </button>
+                    </div>
                     
                     <div class="timeline-wrapper">
                         <div class="horizontal-timeline">
@@ -365,6 +399,10 @@
         // Dynamically create timeline points
         const timelinePoints = document.getElementById('timelinePoints');
         const timelineContent = document.getElementById('timelineContent');
+        const togglePinBtn = document.getElementById('togglePinBtn');
+        
+        // Pin visibility state
+        let isPinVisible = true;
         
         // Initialize with the first content item
         timelineContent.textContent = timelineData[0].content;
@@ -391,6 +429,22 @@
             }
             
             timelinePoints.appendChild(pointDiv);
+        });
+        
+        // Handle toggle pin button
+        togglePinBtn.addEventListener('click', () => {
+            isPinVisible = !isPinVisible;
+            
+            // Update all markers
+            const markers = document.querySelectorAll('.location-marker');
+            markers.forEach(marker => {
+                marker.style.opacity = isPinVisible ? '1' : '0';
+            });
+            
+            // Update button text
+            togglePinBtn.innerHTML = isPinVisible ? 
+                '<span class="pin-icon">📍</span> Esconder Pin' : 
+                '<span class="pin-icon" style="opacity: 0.5;">📍</span> Mostrar Pin';
         });
         
         // Handle hamburger menu
@@ -433,7 +487,6 @@
         
         // Handle timeline navigation - improved version
         const allTimelinePoints = document.querySelectorAll('.timeline-point');
-        const locationMarker = document.getElementById('locationMarker');
         
         allTimelinePoints.forEach(point => {
             point.addEventListener('click', () => {
@@ -457,6 +510,8 @@
                 const markerDiv = document.createElement('div');
                 markerDiv.className = 'location-marker';
                 markerDiv.textContent = '📍';
+                // Apply current visibility
+                markerDiv.style.opacity = isPinVisible ? '1' : '0';
                 point.appendChild(markerDiv);
                 
                 // Update content with fade effect
