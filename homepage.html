@@ -50,8 +50,21 @@
             width: 24px;
             background-color: #fff;
             margin: 3px 0;
+            transition: all 0.3s ease;
         }
 
+        .hamburger.open span: nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
         .name {
             font-size: 28px;
             font-weight: bold;
@@ -95,7 +108,7 @@
             transition: background-color 0.3s ease;
             background-color: #243855;
             margin: 10px;
-            border-radius: 30px;
+            border-radius: 16px;
             text-align: center;
         }
 
@@ -330,6 +343,14 @@
     </div>
 
     <script>
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+
+        .hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        });
+                
         // Timeline content data
         const timelineData = [
             {
