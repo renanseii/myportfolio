@@ -95,7 +95,7 @@
             transition: background-color 0.3s ease;
             background-color: #243855;
             margin: 10px;
-            border-radius: 30px;
+            border-radius: 16px;
             text-align: center;
         }
 
@@ -292,6 +292,17 @@
                 margin: 0 10px;
             }
         }
+             .hamburger.open span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+    
+            .hamburger.open span:nth-child(2) {
+                opacity: 0;
+            }
+    
+            .hamburger.open span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
     </style>
 </head>
 <body>
@@ -521,6 +532,13 @@
                     timelineContent.style.opacity = '1';
                 }, 300);
             });
+        });
+         const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('open');
         });
     </script>
 </body>
