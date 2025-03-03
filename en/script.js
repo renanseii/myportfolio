@@ -2,31 +2,31 @@
         const timelineData = [
             {
                 year: "1996",
-                content: "Nasci em 1996 em São Paulo e quando criança meu pai sempre me incentivou a utilizar o computador. Esse incentivo à computação fez com que eu me apaixonasse por tecnologia e também por jogos eletrônicos."
+                content: "Born in 1996 in São Paulo and in my childhood my father always encouraged me to use computer. This led me to my passion for technology and for electronic games as well."
             },
             {
                 year: "2016",
-                content: "Em 2016 realizando o cursinho estava em dúvida entre fazer Administração ou Engenharia porém minha vontade de fazer Engenharia era maior uma vez que já tinha facilidade com tecnologia e também gostava de exatas."
+                content: "In 2016 while studying I was in between Administration or Engineer course, however my will to make Engineer was higher since my passion for technology and math."
             },
             {
                 year: "2017",
-                content: "Em 2017 acabei entrando para Engenharia de Produção no Centro Universitário da FEI"
+                content: "In 2017 I started my Production Engineering course at Centro Universitário FEI"
             },
             {
                 year: "2020",
-                content: "Em 2020 o ano da pandemia começou e com tudo fechado, decidi investir em cursos extracurriculares como por exemplo Excel Avançado e Power BI. Apesar do conhecimento em Excel e Power BI, fiz esses cursos para verificar se tinha alguma lacuna de conhecimento e expandir ainda mais minhas habilidades."
+                content: "In 2020 at pandemics, I decided to invest on extracurricular courses like Excel and Power BI. Despite the knowledge in Excel and Power BI, I've done this courses to verify any gap in my knowledge and expand my skills."
             },
             {
                 year: "2021",
-                content: "Em 2021, tive minha primeira experiência profissional na Bridgestone South America como Estagiário de Engenharia de Processos na equipe de Pneus de Passageiros. Foi uma experiência incrível na qual pude vivenciar a rotina diária da fábrica e entender a complexidade da produção de pneus."
+                content: "In 2021 I had my first professional experience at Bridgestone South America as Process Engineer Intern on Passenger's tire team. It was an amazing experience in which I could live the daily routine of the plant and understand the complexity of producing a tire."
             },
             {
                 year: "2022-2023",
-                content: "No final de 2022, me formei em Engenharia de Produção no Centro Universitário FEI e infelizmente meu estágio chegou ao fim. Em 2023 fui contratado pela Certiphic como Analista de Operações focando inteiramente em relatórios para os clientes."
+                content: "In the end of 2022, I've graduated in Production Engineering at Centro Universitário FEI and unfortunately my internship has come to an end. In 2023 I was hired by Certiphic as Business Intelligence Analyst focusing entirely on report for our customers."
             },
             {
                 year: "2024",
-                content: "Em 2024 minha carreira na Certiphic terminou e iniciei uma nova jornada na Ajinomoto do Brasil como Analista de Business Intelligence."
+                content: "In 2024 my career at Certiphic ended and I've started a new journey at Ajinomoto do Brasil as Business Intelligence Specialist."
             }
         ];
 
