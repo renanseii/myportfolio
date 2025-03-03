@@ -661,6 +661,187 @@
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
+
+        /* Skills Section Styles */
+.skills-container {
+    background-color: #2c4166;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-subtitle {
+    font-size: 24px;
+    color: var(--accent);
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.skills-subtitle:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 3px;
+}
+
+/* Technical Skills */
+.skills-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.skill-card {
+    display: flex;
+    background: linear-gradient(145deg, #2c4166 0%, #1e2e4a 100%);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    border-left: 3px solid var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.skill-icon {
+    font-size: 32px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.skill-details {
+    flex-grow: 1;
+}
+
+.skill-details h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: var(--text-light);
+}
+
+.skill-date {
+    font-size: 14px;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.skill-progress {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #7fe7df);
+    border-radius: 4px;
+}
+
+/* Language Skills */
+.language-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.language-card {
+    background: linear-gradient(145deg, #2c4166 0%, #1e2e4a 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.language-card:hover {
+    transform: translateY(-5px);
+}
+
+.language-header {
+    background-color: rgba(36, 56, 85, 0.8);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.language-header h4 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.language-flag {
+    font-size: 24px;
+}
+
+.language-skills {
+    padding: 15px;
+}
+
+.language-skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.language-skill:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.language-level {
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.language-level.beginner {
+    background-color: rgba(255, 165, 0, 0.2);
+    color: orange;
+}
+
+.language-level.intermediate {
+    background-color: rgba(30, 144, 255, 0.2);
+    color: #1e90ff;
+}
+
+.language-level.advanced {
+    background-color: rgba(78, 205, 196, 0.2);
+    color: var(--accent);
+}
+
+/* Responsive styles for Skills section */
+@media (max-width: 768px) {
+    .language-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-card {
+        flex-direction: column;
+    }
+    
+    .skill-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -830,7 +1011,153 @@
             </section>
         </main>
     </div>
+    
+<section id="skills" class="section">
+    <h2 class="section-title">Habilidades</h2>
+    
+    <!-- Technical Skills Section -->
+    <div class="skills-container">
+        <h3 class="skills-subtitle">Certificações e Cursos</h3>
+        <div class="skills-timeline">
+            <!-- Skills will be populated here -->
+            <!-- Power Apps -->
+<div class="skill-card">
+    <div class="skill-icon">📱</div>
+    <div class="skill-details">
+        <h4>Power Apps</h4>
+        <div class="skill-date">Fevereiro/2024 - Março/2024</div>
+        <div class="skill-progress">
+            <div class="progress-bar" style="width: 85%"></div>
+        </div>
+    </div>
+</div>
 
+<!-- Python -->
+<div class="skill-card">
+    <div class="skill-icon">🐍</div>
+    <div class="skill-details">
+        <h4>Python</h4>
+        <div class="skill-date">Janeiro/2024 - Fevereiro/2024</div>
+        <div class="skill-progress">
+            <div class="progress-bar" style="width: 75%"></div>
+        </div>
+    </div>
+</div>
+
+<!-- SQL -->
+<div class="skill-card">
+    <div class="skill-icon">🗃️</div>
+    <div class="skill-details">
+        <h4>Introduction to SQL</h4>
+        <div class="skill-date">Dezembro/2022 - Janeiro/2023</div>
+        <div class="skill-progress">
+            <div class="progress-bar" style="width: 80%"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Six Sigma -->
+<div class="skill-card">
+    <div class="skill-icon">🏆</div>
+    <div class="skill-details">
+        <h4>Yellow Belt Six Sigma</h4>
+        <div class="skill-date">Março/2021 - Abril/2021</div>
+        <div class="skill-progress">
+            <div class="progress-bar" style="width: 90%"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Power BI -->
+<div class="skill-card">
+    <div class="skill-icon">📊</div>
+    <div class="skill-details">
+        <h4>Power BI</h4>
+        <div class="skill-date">Outubro/2020 - Dezembro/2020</div>
+        <div class="skill-progress">
+            <div class="progress-bar" style="width: 95%"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Excel -->
+<div class="skill-card">
+    <div class="skill-icon">📈</div>
+    <div class="skill-details">
+        <h4>Advanced Excel</h4>
+        <div class="skill-date">Janeiro/2020 - Fevereiro/2020</div>
+        <div class="skill-progress">
+            <div class="progress-bar" style="width: 95%"></div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+    
+    <!-- Language Skills Section -->
+    <div class="skills-container">
+        <h3 class="skills-subtitle">Idiomas</h3>
+        <div class="language-cards">
+            <!-- English -->
+<div class="language-card">
+    <div class="language-header">
+        <h4>English</h4>
+        <div class="language-flag">🇬🇧</div>
+    </div>
+    <div class="language-skills">
+        <div class="language-skill">
+            <span>Listening</span>
+            <div class="language-level advanced">Advanced</div>
+        </div>
+        <div class="language-skill">
+            <span>Speaking</span>
+            <div class="language-level advanced">Advanced</div>
+        </div>
+        <div class="language-skill">
+            <span>Reading</span>
+            <div class="language-level advanced">Advanced</div>
+        </div>
+        <div class="language-skill">
+            <span>Writing</span>
+            <div class="language-level advanced">Advanced</div>
+        </div>
+    </div>
+</div>
+
+<!-- Spanish -->
+<div class="language-card">
+    <div class="language-header">
+        <h4>Spanish</h4>
+        <div class="language-flag">🇪🇸</div>
+    </div>
+    <div class="language-skills">
+        <div class="language-skill">
+            <span>Listening</span>
+            <div class="language-level intermediate">Intermediate</div>
+        </div>
+        <div class="language-skill">
+            <span>Speaking</span>
+            <div class="language-level intermediate">Intermediate</div>
+        </div>
+        <div class="language-skill">
+            <span>Reading</span>
+            <div class="language-level intermediate">Intermediate</div>
+        </div>
+        <div class="language-skill">
+            <span>Writing</span>
+            <div class="language-level beginner">Beginner</div>
+        </div>
+    </div>
+</div>
+            <!-- Language cards will be populated here -->
+        </div>
+    </div>
+</section>
+
+
+
+
+    
     <script>
         // Timeline content data
         const timelineData = [
@@ -1029,6 +1356,42 @@
             });
         }
     });
+        
+    // Animation for skill cards
+function setupSkillsAnimation() {
+    const skillCards = document.querySelectorAll('.skill-card, .language-card');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    skillCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+        observer.observe(card);
+    });
+}
+
+// Call this function when the Skills section is activated
+document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', () => {
+        if(item.getAttribute('data-section') === 'skills') {
+            setTimeout(setupSkillsAnimation, 100);
+        }
+    });
+});
     </script>
 </body>
 </html>
