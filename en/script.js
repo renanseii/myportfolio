@@ -1,4 +1,4 @@
-        // Timeline content data
+     // Timeline content data
         const timelineData = [
             {
                 year: "1996",
