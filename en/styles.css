@@ -858,3 +858,81 @@
 .skill-card:hover .skill-image {
     transform: scale(1.1);
 }
+
+.language-card {
+    background: linear-gradient(145deg, #2c4166 0%, #1e2e4a 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.language-card:hover {
+    transform: translateY(-5px);
+}
+
+.language-header {
+    background-color: rgba(36, 56, 85, 0.8);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.language-header h4 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.language-flag {
+    display: flex;
+    align-items: center;
+}
+
+.flag-image {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.language-skills {
+    padding: 15px;
+}
+
+.language-skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.language-skill:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.language-level {
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.language-level.beginner {
+    background-color: rgba(255, 165, 0, 0.2);
+    color: orange;
+}
+
+.language-level.intermediate {
+    background-color: rgba(30, 144, 255, 0.2);
+    color: #1e90ff;
+}
+
+.language-level.advanced {
+    background-color: rgba(78, 205, 196, 0.2);
+    color: var(--accent);
+}
