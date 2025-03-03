@@ -836,10 +836,21 @@
     }
 }
 
+.skill-icon {
+    width: 60px; /* Adjust the width to fit the image */
+    height: 60px; /* Adjust the height to fit the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    border-radius: 8px;
+    overflow: hidden; /* Ensure the image doesn't overflow */
+}
+
 .skill-image {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; /* Ensure the image scales properly */
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
