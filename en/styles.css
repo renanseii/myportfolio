@@ -634,6 +634,9 @@
         #contacts.active {
             animation: zoomIn 0.7s ease;
         }
+        #resume.active {
+            animation: zoomIn 0.7s ease;
+        }
         
         @keyframes slideInRight {
             from { opacity: 0; transform: translateX(30px); }
