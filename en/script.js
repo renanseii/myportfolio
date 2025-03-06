@@ -2,31 +2,32 @@
         const timelineData = [
             {
                 year: "1996",
-                content: "Born in 1996 in São Paulo and in my childhood my father always encouraged me to use computer. This led me to my passion for technology and for electronic games as well."
+                content: "I was born in 1996 in São Paulo. My father always encouraged me to use computer. I remember staying up late night just playing games as Counter-Strike and Ragnarok. This led me to my first passion for technology and electronic games as well. Also I'm very grateful for these games because I can definitely say that I am more creative due to the difficulty of these games." 
+
             },
             {
                 year: "2016",
-                content: "In 2016 while studying I was in between Administration or Engineer course, however my will to make Engineer was higher since my passion for technology and math."
+                content: "In 2016 I was studying to choose in between Administration or Engineer course. It was a tough decision for me, however I choose Engineering course for several reasons such as physics and math."
             },
             {
                 year: "2017",
-                content: "In 2017 I started my Production Engineering course at Centro Universitário FEI"
+                content: "In 2017 I was approved at Centro Universitário FEI in São Bernardo do Campo-SP. My first year wasn't easy but I was resilient to stay and challenge myself to move forward in this journey. One of my most remarkable events was getting a 10 on a exam which I studied the whole night."
             },
             {
                 year: "2020",
-                content: "In 2020 at pandemics, I decided to invest on extracurricular courses like Excel and Power BI. Despite the knowledge in Excel and Power BI, I've done this courses to verify any gap in my knowledge and expand my skills."
+                content: "In 2020 at pandemics, I decided to invest on extracurricular courses like Excel and Power BI. Despite the knowledge in Excel and Power BI, I've done this courses to verify any gap in my knowledge and expand my skills. Maybe this was the hardest part of my life (and others) so far, staying locked in house wasn't easy and losing about 2 years of my graduation not being able to see my friends was very tough for me. This year was marked by uncertainty about my graduation since we had no money left due to pandemic. But again we got through."
             },
             {
                 year: "2021",
-                content: "In 2021 I had my first professional experience at Bridgestone South America as Process Engineer Intern on Passenger's tire team. It was an amazing experience in which I could live the daily routine of the plant and understand the complexity of producing a tire."
+                content: "In 2021 I had my first professional experience at Bridgestone South America as Process Engineer Intern on Passenger's tire team. It was an amazing experience in which I could live the daily routine of the plant and understand the complexity of producing a tire. I am very grateful for my boss, the team and the company as well for believing in my skills."
             },
             {
                 year: "2022-2023",
-                content: "In the end of 2022, I've graduated in Production Engineering at Centro Universitário FEI and unfortunately my internship has come to an end. In 2023 I was hired by Certiphic as Business Intelligence Analyst focusing entirely on report for our customers."
+                content: "In the end of 2022, I've graduated in Production Engineering at Centro Universitário FEI and unfortunately my internship has come to an end. In 2023 I was hired by Certiphic as Business Intelligence Analyst focusing entirely on report for our customers. I was able at Certiphic to develop new skills such as Power Apps application and understand the complexity of build a building."
             },
             {
                 year: "2024",
-                content: "In 2024 my career at Certiphic ended and I've started a new journey at Ajinomoto do Brasil as Business Intelligence Specialist."
+                content: "In 2024 my joruney at Certiphic ended and I've started a new journey at Ajinomoto do Brasil as Business Intelligence Specialist."
             }
         ];
 
